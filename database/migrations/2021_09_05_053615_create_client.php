@@ -33,6 +33,7 @@ class CreateClient extends Migration
             $table->string("second_lastname", 20)->nullable(false);
             $table->tinyInteger("document_id");
             $table->foreign("document_id")->references("id")->on("document_types");
+            //Softdeletes
             $table->softDeletes();
             $table->timestamps();
         });
